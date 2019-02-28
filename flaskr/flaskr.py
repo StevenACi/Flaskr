@@ -69,7 +69,7 @@ def add_entry():
         abort(401)
     db = get_db()
 
-    chars = set('<>%&#\/')
+    chars = set('<>%$&#\/')
     if any((c in chars) for c in request.form['title']):
         abort(403)
     if any((c in chars) for c in request.form['text']):
